@@ -239,7 +239,7 @@ During game play, players take it in turns to fire at a location on their oppone
                 {
                     Console.WriteLine("You Won in {0} guesses", playerGuessCount); // displayer win message
                     WriteJson(playerMap, displayMap, computerMap, playerGuessCount, playerHitCount, computerGuessCount, computerHitCount); // write the game to json the file
-                    break; // break from while loop
+                    Main(); // call main function again
                 }
                 Console.WriteLine("\n\nComputer is guessing: \n\n"); // output computer guess message
                 Task.Delay(2000).Wait(); // wait two seconds
@@ -250,6 +250,7 @@ During game play, players take it in turns to fire at a location on their oppone
                 {
                     Console.WriteLine("The computer won in {0} guesses", computerGuessCount); // displayer win message
                     WriteJson(playerMap, displayMap, computerMap, playerGuessCount, playerHitCount, computerGuessCount, computerHitCount); // write the game to the json file
+                    Main(); // call main function again
                 }
                 OutputMap(playerMap); // output player map
                 WriteJson(playerMap, displayMap, computerMap, playerGuessCount, playerHitCount, computerGuessCount, computerHitCount); // write the current data to the json file
